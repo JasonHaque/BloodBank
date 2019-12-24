@@ -48,6 +48,20 @@
         android:text="Sign Up"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Already a user ?? CLick the button below to Log in now"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/go_to_login"
+        android:text="@string/log_in"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
 
