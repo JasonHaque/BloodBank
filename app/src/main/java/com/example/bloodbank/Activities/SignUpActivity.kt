@@ -24,8 +24,7 @@ class SignUpActivity : AppCompatActivity() {
             val mail = signup_mail.text.toString()
             val pass = signup_password.text.toString()
             val confirm = confirm_password.text.toString()
-            val contact = phone_number.text.toString()
-            if(mail.isEmpty() || pass.isEmpty() || confirm.isEmpty() || contact.isEmpty()){
+            if(mail.isEmpty() || pass.isEmpty() || confirm.isEmpty()){
                 Toast.makeText(this,"Fill up the fields properly",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
