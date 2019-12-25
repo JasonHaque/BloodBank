@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.bloodbank.R
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class SignUpActivity : AppCompatActivity() {
@@ -28,10 +29,14 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this,"Fill up the fields properly",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            else if(pass.equals(confirm)){
+            else if(pass != confirm){
                 Toast.makeText(this,"Passwords do not match",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
 
+            }
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(mail,pass).addOnSuccessListener {
+                val intent = Intent(this,AdditionalData::class.java)
+                startActivity(intent)
             }
         }
     }
