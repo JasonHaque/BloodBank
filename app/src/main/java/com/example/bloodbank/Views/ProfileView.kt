@@ -22,5 +22,9 @@ class ProfileView : AppCompatActivity() {
             val intent = Intent(this,LogInActivity::class.java)
             startActivity(intent)
         }
+        go_to_timeline.setOnClickListener {
+            val intent = Intent(this,TImelineView::class.java)
+            startActivity(intent)
+        }
     }
 }
