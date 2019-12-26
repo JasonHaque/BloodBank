@@ -15,6 +15,7 @@ class LogInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
         bindListeners()
+        checkUSerStatus()
     }
     fun bindListeners(){
         go_to_signup.setOnClickListener {
@@ -42,5 +43,11 @@ class LogInActivity : AppCompatActivity() {
             return true
         }
         return false
+    }
+    fun checkUSerStatus(){
+        if(FirebaseAuth.getInstance().currentUser != null){
+            val intent = Intent(this,ProfileView::class.java)
+            startActivity(intent)
+        }
     }
 }
