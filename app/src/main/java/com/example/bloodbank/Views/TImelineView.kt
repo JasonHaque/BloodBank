@@ -1,7 +1,9 @@
 package com.example.bloodbank.Views
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.bloodbank.Activities.RequstBlood
 import com.example.bloodbank.R
 import kotlinx.android.synthetic.main.activity_timeline_view.*
 
@@ -15,7 +17,8 @@ class TImelineView : AppCompatActivity() {
 
     fun bindListeners(){
         Request_blood.setOnClickListener {
-            //TODO: add a new listener
+            val intent = Intent(this,RequstBlood::class.java)
+            startActivity(intent)
         }
     }
 }
