@@ -20,5 +20,9 @@ class TImelineView : AppCompatActivity() {
             val intent = Intent(this,RequstBlood::class.java)
             startActivity(intent)
         }
+        go_to_profile.setOnClickListener {
+            val intent = Intent(this,ProfileView::class.java)
+            startActivity(intent)
+        }
     }
 }
