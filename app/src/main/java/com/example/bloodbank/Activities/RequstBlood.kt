@@ -3,6 +3,7 @@ package com.example.bloodbank.Activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.bloodbank.Classes.EmergencyBlood
 import com.example.bloodbank.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -28,9 +29,13 @@ class RequstBlood : AppCompatActivity() {
             val time = requesting_time.text.toString()
             val amount = amount_of_blood.text.toString()
 
+            val bloodData = EmergencyBlood(bloodgroup,location,time, amount)
             db.child("EmergencyBlood").child("Need")
                 .child(FirebaseAuth.getInstance()
-                    .currentUser?.uid.toString())
+                    .currentUser?.uid.toString()).setValue(bloodData)
+                .addOnSuccessListener {
+                    Toast.makeText(this,"Success Creating Emergency",Toast.LENGTH_SHORT).show()
+                }
 
         }
     }
