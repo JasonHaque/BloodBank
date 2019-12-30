@@ -14,4 +14,5 @@
     <string name="when_do_you_need_it">When do you need it?</string>
     <string name="how_many_bags_do_you_need">how many bags do you need?</string>
     <string name="submit">Submit</string>
+    <string name="go_to_profile">Go to Profile</string>
 </resources>
