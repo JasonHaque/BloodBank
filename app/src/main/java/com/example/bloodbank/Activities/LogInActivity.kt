@@ -17,7 +17,7 @@ class LogInActivity : AppCompatActivity() {
         bindListeners()
         checkUSerStatus()
     }
-    fun bindListeners(){
+    private fun bindListeners(){
         go_to_signup.setOnClickListener {
             val intent = Intent(this,SignUpActivity::class.java)
             startActivity(intent)
@@ -38,13 +38,13 @@ class LogInActivity : AppCompatActivity() {
 
         }
     }
-    fun validateInputs():Boolean{
+    private fun validateInputs():Boolean{
         if(login_mail.text.toString().isEmpty() || login_password.text.toString().isEmpty()){
             return true
         }
         return false
     }
-    fun checkUSerStatus(){
+    private fun checkUSerStatus(){
         if(FirebaseAuth.getInstance().currentUser != null){
             val intent = Intent(this,ProfileView::class.java)
             startActivity(intent)

@@ -15,7 +15,7 @@ class TImelineView : AppCompatActivity() {
         bindListeners()
     }
 
-    fun bindListeners(){
+    private fun bindListeners(){
         Request_blood.setOnClickListener {
             val intent = Intent(this,RequstBlood::class.java)
             startActivity(intent)

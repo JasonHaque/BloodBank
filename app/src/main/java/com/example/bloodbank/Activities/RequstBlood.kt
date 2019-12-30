@@ -12,7 +12,7 @@ class RequstBlood : AppCompatActivity() {
         setContentView(R.layout.activity_requst_blood)
         bindListeners()
     }
-    fun bindListeners(){
+    private fun bindListeners(){
         submit_request.setOnClickListener {
             //TODO: add a new listener
         }

@@ -22,7 +22,7 @@ class ProfileView : AppCompatActivity() {
         bindListeners()
     }
 
-    fun bindWidgets(){
+    private fun bindWidgets(){
         db.child("Users").child(FirebaseAuth.getInstance().currentUser?.uid.toString())
             .child("Data").addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(p0: DatabaseError) {
@@ -61,7 +61,7 @@ class ProfileView : AppCompatActivity() {
             })
     }
 
-    fun bindListeners(){
+    private fun bindListeners(){
         log_out.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             val intent = Intent(this,LogInActivity::class.java)
