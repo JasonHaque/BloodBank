@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.bloodbank.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_requst_blood.*
 
 class RequstBlood : AppCompatActivity() {
 
+    private var db = FirebaseDatabase.getInstance().reference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_requst_blood)
@@ -20,6 +23,15 @@ class RequstBlood : AppCompatActivity() {
                 Toast.makeText(this,error,Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            val bloodgroup = requesting_blood_group.text.toString()
+            val location = requesting_location.text.toString()
+            val time = requesting_time.text.toString()
+            val amount = amount_of_blood.text.toString()
+
+            db.child("EmergencyBlood").child("Need")
+                .child(FirebaseAuth.getInstance()
+                    .currentUser?.uid.toString())
+
         }
     }
     private fun validateInputs():String{
