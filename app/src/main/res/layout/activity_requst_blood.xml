@@ -10,31 +10,31 @@
 
     <EditText
         android:id="@+id/requesting_blood_group"
-        android:hint="What Blood group do you need?"
+        android:hint="@string/what_blood_group_do_you_need"
         android:layout_width="match_parent"
         android:layout_marginBottom="16dp"
         android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/requesting_location"
-        android:hint="Where do you need the blood?"
+        android:hint="@string/where_do_you_need_the_blood"
         android:layout_width="match_parent"
         android:layout_marginBottom="16dp"
         android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/requesting_time"
-        android:hint="When do you need it?"
+        android:hint="@string/when_do_you_need_it"
         android:layout_width="match_parent"
         android:layout_marginBottom="16dp"
         android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/amount_of_blood"
-        android:hint="how many bags do you need?"
+        android:hint="@string/how_many_bags_do_you_need"
         android:layout_width="match_parent"
         android:layout_marginBottom="16dp"
         android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/submit_request"
-        android:text="Submit"
+        android:text="@string/submit"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

@@ -9,4 +9,9 @@
     <string name="go_to_timeline">Go to Timeline</string>
     <string name="log_out">Log Out</string>
     <string name="request_blood">Request Blood</string>
+    <string name="what_blood_group_do_you_need">What Blood group do you need?</string>
+    <string name="where_do_you_need_the_blood">Where do you need the blood?</string>
+    <string name="when_do_you_need_it">When do you need it?</string>
+    <string name="how_many_bags_do_you_need">how many bags do you need?</string>
+    <string name="submit">Submit</string>
 </resources>
