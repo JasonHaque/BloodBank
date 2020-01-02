@@ -19,7 +19,7 @@ class AdditionalData : AppCompatActivity() {
         setContentView(R.layout.activity_additional_data)
         bindWidgets()
     }
-    fun bindWidgets(){
+    private fun bindWidgets(){
         save_info.setOnClickListener {
             val firstName = first_name.text.toString()
             val lastName =  last_name.text.toString()
@@ -32,7 +32,7 @@ class AdditionalData : AppCompatActivity() {
             }
             val bg = findViewById<RadioButton>(bloodGroup.checkedRadioButtonId).text.toString()
             print(bg)
-            val data:UserData = UserData(firstName,lastName,ageData.toInt(),contactData,bg)
+            val data = UserData(firstName,lastName,ageData.toInt(),contactData,bg)
             db.child("Users").child(FirebaseAuth.getInstance().currentUser?.uid.toString())
                 .child("Data").setValue(data).addOnSuccessListener {
                     Toast.makeText(this,"Success",Toast.LENGTH_SHORT).show()
