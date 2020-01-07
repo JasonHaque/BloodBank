@@ -25,14 +25,15 @@ class AdditionalData : AppCompatActivity() {
             val lastName =  last_name.text.toString()
             val ageData = age.text.toString()
             val contactData = phone_number.text.toString()
-            val error = validateInputs(firstName,lastName,ageData,contactData)
+            val sex = user_sex.text.toString()
+            val error = validateInputs(firstName,lastName,ageData,contactData,sex)
             if (error != ""){
                 Toast.makeText(this,error,Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             val bg = findViewById<RadioButton>(bloodGroup.checkedRadioButtonId).text.toString()
             print(bg)
-            val data = UserData(firstName,lastName,ageData.toInt(),contactData,bg)
+            val data = UserData(firstName,lastName,ageData.toInt(),contactData,sex,bg)
             db.child("Users").child(FirebaseAuth.getInstance().currentUser?.uid.toString())
                 .child("Data").setValue(data).addOnSuccessListener {
                     Toast.makeText(this,"Success",Toast.LENGTH_SHORT).show()
@@ -41,8 +42,8 @@ class AdditionalData : AppCompatActivity() {
         }
     }
 
-    fun validateInputs(firstName:String,lastName:String,ageData:String,contact:String):String{
-        if(firstName.isEmpty() || lastName.isEmpty() || ageData.isEmpty() || contact.isEmpty()){
+    fun validateInputs(firstName:String,lastName:String,ageData:String,contact:String,sex:String):String{
+        if(firstName.isEmpty() || lastName.isEmpty() || ageData.isEmpty() || contact.isEmpty() || sex.isEmpty()){
             return "Fill up the fields dude"
         }
         return ""

@@ -7,5 +7,6 @@ data class UserData(
     val LastName:String="",
     val age:Int,
     val contact:String="",
+    val sex:String ="",
     val bloodGroup:String=""
 ):Serializable
