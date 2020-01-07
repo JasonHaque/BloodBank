@@ -48,6 +48,9 @@ class ProfileView : AppCompatActivity() {
                             user_contact.text=it.value.toString()
 
                         }
+                        else if (it.key.equals("sex")){
+                            user_sex_view.text = it.value.toString()
+                        }
                         else if(it.key.equals("bloodGroup")){
                             user_blood_group.text=it.value.toString()
 
