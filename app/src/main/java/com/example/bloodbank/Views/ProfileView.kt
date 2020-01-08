@@ -36,28 +36,28 @@ class ProfileView : AppCompatActivity() {
                     children.forEach{
 
                         if(it.key.equals("firstName")){
-                            name = it.value.toString()
+                            name =it.value.toString()
                         }
                         else if(it.key.equals("lastName")){
                             name+=it.value.toString()
                         }
                         else if(it.key.equals("age")){
-                            user_age.text=it.value.toString()
+                            user_age.text="Age : "+it.value.toString()
                         }
                         else if(it.key.equals("contact")){
-                            user_contact.text=it.value.toString()
+                            user_contact.text="Contact : "+it.value.toString()
 
                         }
                         else if (it.key.equals("sex")){
-                            user_sex_view.text = it.value.toString()
+                            user_sex_view.text ="Sex : "+ it.value.toString()
                         }
                         else if(it.key.equals("bloodGroup")){
-                            user_blood_group.text=it.value.toString()
+                            user_blood_group.text="Blood Group : "+it.value.toString()
 
                         }
                     }
-                    user_name.text=name
-                    user_mail.text=FirebaseAuth.getInstance().currentUser?.email
+                    user_name.text="User Name : "+name
+                    user_mail.text="User Email : "+FirebaseAuth.getInstance().currentUser?.email
 
                 }
 
